@@ -2,7 +2,10 @@
   "DEFAULT_CARRIERS": {
     "Parcels": "https://parcelsapp.com/en/tracking/",
     "17Track": "https://t.17track.net/en#nums=",
-    "EVEREST": "http://everest.cargotrack.net/m/track.asp?track="
+    "EVEREST": "http://everest.cargotrack.net/m/track.asp?track=",
+    "MAERSK": "https://www.maersk.com/tracking/",
+    "CMA-CGM": "https://www.cma-cgm.com/eBusiness/tracking/detail/",
+    "SEARATES": "https://www.searates.com/container/tracking/?number="
   },
   "CARRIERS": {
     "Drop Off": {
@@ -10,6 +13,15 @@
     },
     "Pick Up": {
       "default_carriers": ["EVEREST"]
+    },
+    "Maersk": {
+      "default_carriers": ["MAERSK"]
+    },
+    "CMA-CGM": {
+      "default_carriers": ["CMA-CGM"]
+    },
+    "Searates": {
+      "default_carriers": ["SEARATES"]
     },
     "Unknown": {
       "default_carriers": ["Parcels", "17Track", "EVEREST"]
