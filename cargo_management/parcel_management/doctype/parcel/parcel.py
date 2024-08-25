@@ -31,6 +31,10 @@ class Parcel(Document):
 		content: DF.Table[ParcelContent]
 		customer: DF.Link | None
 		customer_name: DF.Data | None
+		currency: DF.Link
+		buying_price_list: DF.Link | None
+		conversion_rate: DF.Float
+		price_list_currency: DF.Link | None
 		easypost_id: DF.Data | None
 		est_delivery_1: DF.Date | None
 		est_delivery_2: DF.Date | None
