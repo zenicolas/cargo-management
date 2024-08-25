@@ -146,7 +146,7 @@ frappe.ui.form.on('Parcel', {
 				{
 					fieldname: 'item_code',
 					fieldtype: 'Data',
-					label: __('Item sshhshsh')
+					label: __('Item Code')
 				}],
 			get_query: () => {
 				return {
