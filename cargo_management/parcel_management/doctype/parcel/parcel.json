@@ -92,12 +92,11 @@
   {
    "allow_in_quick_entry": 1,
    "bold": 1,
-   "default": "Unknown",
    "fieldname": "carrier",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Carrier",
-   "options": "Drop Off\nPick Up\nUnknown\nAmazon\nUSPS\nUPS\nDHL\nFedEx\nOnTrac\nCainiao\nSF Express\nYanwen\nYunExpress\nSunYou\nPitney Bowes\nVeho",
+   "options": "Supplier",
    "reqd": 1,
    "search_index": 1
   },
@@ -192,11 +191,11 @@
   {
    "allow_in_quick_entry": 1,
    "bold": 1,
-   "description": "Store that sends the package.",
+   "description": "Company that sends the package.",
    "fieldname": "shipper",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Link",
    "label": "Shipper",
-   "options": "Amazon\neBay\nWalmart\nTarget\nBest Buy\nNewegg\n6PM\nCarters\nShein\nAliexpress\nAlibaba\nHomeDepot\nSephora\nELF\nThe Ordinary\nAOA\nFossil\nNike\nAdidas\nPuma\nCrocs\nKeds\nSperry\nLevis\nGAP\nOld Navy\nTommy Hilfiger\nStockX\nVictoria's Secret\nBath and Body Works"
+   "options": "Company"
   },
   {
    "description": "Notes or instructions.",
