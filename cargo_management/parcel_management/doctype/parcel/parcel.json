@@ -228,7 +228,6 @@
    "fieldname": "total",
    "fieldtype": "Currency",
    "label": "Total(Amt)",
-   "options": "USD",
    "read_only": 1
   },
   {
@@ -247,7 +246,6 @@
    "fieldtype": "Currency",
    "label": "Shipping Amount",
    "non_negative": 1,
-   "options": "USD"
   },
   {
    "allow_in_quick_entry": 1,
