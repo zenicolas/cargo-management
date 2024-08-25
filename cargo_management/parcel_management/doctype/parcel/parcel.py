@@ -21,7 +21,7 @@ class Parcel(Document):
 
 		assisted_purchase: DF.Check
 		cargo_shipment: DF.Link | None
-		carrier: DF.Literal["Drop Off", "Pick Up", "Unknown", "Amazon", "USPS", "UPS", "DHL", "FedEx", "OnTrac", "Cainiao", "SF Express", "Yanwen", "YunExpress", "SunYou", "Pitney Bowes", "Veho"]
+		carrier: DF.Link
 		carrier_est_delivery: DF.Datetime | None
 		carrier_est_weight: DF.Float
 		carrier_last_detail: DF.SmallText | None
@@ -39,7 +39,7 @@ class Parcel(Document):
 		notes: DF.SmallText | None
 		order_number: DF.Data | None
 		residential_address: DF.Check
-		shipper: DF.Autocomplete | None
+		shipper: DF.Link | None
 		shipping_amount: DF.Currency
 		signed_by: DF.Data | None
 		status: DF.Literal["Awaiting Receipt", "Awaiting Confirmation", "In Extraordinary Confirmation", "Awaiting Departure", "In Transit", "In Customs", "Sorting", "To Bill", "Unpaid", "For Delivery or Pickup", "Finished", "Cancelled", "Never Arrived", "Returned to Sender"]
