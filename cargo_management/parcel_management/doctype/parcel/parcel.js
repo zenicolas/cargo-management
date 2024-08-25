@@ -25,8 +25,8 @@ frappe.ui.form.on('Parcel', {
 		});
 
 		// Setting Currency Labels
-		frm.set_currency_labels(['total', 'shipping_amount'], 'USD');
-		frm.set_currency_labels(['rate', 'amount'], 'USD', 'content');
+		//frm.set_currency_labels(['total', 'shipping_amount'], 'USD');
+		//frm.set_currency_labels(['rate', 'amount'], 'USD', 'content');
 	},
 
 	refresh(frm) {
@@ -138,7 +138,6 @@ frappe.ui.form.on('Parcel', {
 			data_fields: [
 				{
 					fieldtype: 'Currency',
-					options: "USD",
 					fieldname: "rate",
 					read_only: 1,
 					hidden: 1,
