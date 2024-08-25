@@ -23,6 +23,14 @@
   "column_break_xquh",
   "residential_address",
   "column_break_loiy",
+  "currency_and_price_list",
+  "currency",
+  "conversion_rate",
+  "cb_price_list",
+  "buying_price_list",
+  "price_list_currency",
+  "plc_conversion_rate",
+  "ignore_pricing_rule",
   "additional_data_from_carrier_section",
   "carrier_est_delivery",
   "carrier_real_delivery",
@@ -115,6 +123,67 @@
    "no_copy": 1,
    "options": "Awaiting Receipt\nAwaiting Confirmation\nIn Extraordinary Confirmation\nAwaiting Departure\nIn Transit\nIn Customs\nSorting\nTo Bill\nUnpaid\nFor Delivery or Pickup\nFinished\nCancelled\nNever Arrived\nReturned to Sender",
    "search_index": 1
+  },
+   {
+   "collapsible": 1,
+   "fieldname": "currency_and_price_list",
+   "fieldtype": "Section Break",
+   "label": "Currency and Price List",
+   "options": "fa fa-tag"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "oldfieldname": "currency",
+   "oldfieldtype": "Select",
+   "options": "Currency",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "oldfieldname": "conversion_rate",
+   "oldfieldtype": "Currency",
+   "precision": "9",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_price_list",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "buying_price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "price_list_currency",
+   "fieldtype": "Link",
+   "label": "Price List Currency",
+   "options": "Currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "plc_conversion_rate",
+   "fieldtype": "Float",
+   "label": "Price List Exchange Rate",
+   "precision": "9",
+   "print_hide": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ignore_pricing_rule",
+   "fieldtype": "Check",
+   "label": "Ignore Pricing Rule",
+   "permlevel": 1,
+   "print_hide": 1
   },
   {
    "collapsible": 1,
