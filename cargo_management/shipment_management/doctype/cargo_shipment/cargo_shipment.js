@@ -36,8 +36,8 @@ frappe.ui.form.on('Cargo Shipment', {
 	validate: function (frm) {
 		frm.doc.pieces = frm.doc.cargo_shipment_lines.length;
 
-		frm.doc.estimated_gross_weight_by_warehouse_in_pounds = frm.get_sum('warehouse_lines', 'weight');
-		frm.doc.estimated_gross_weight_by_carriers_in_pounds = frm.get_sum('cargo_shipment_lines', 'carrier_est_weight');
+		frm.doc.estimated_gross_weight_by_warehouse_in_kg = frm.get_sum('warehouse_lines', 'weight');
+		frm.doc.estimated_gross_weight_by_carriers_in_kg = frm.get_sum('cargo_shipment_lines', 'carrier_est_weight');
 	},
 
 	build_custom_action_items(frm) {
