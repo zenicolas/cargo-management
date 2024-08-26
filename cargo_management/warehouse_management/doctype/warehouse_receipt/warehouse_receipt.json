@@ -9,6 +9,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "batch_no",
+  "warehouse",
   "departure_date",
   "column_break_hnxe",
   "column_break_3",
@@ -23,6 +25,25 @@
   "carrier_est_gross_weight"
  ],
  "fields": [
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch No",
+   "options": "Batch",
+   "search_index": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "oldfieldname": "warehouse",
+   "oldfieldtype": "Link",
+   "options": "Warehouse",
+   "print_hide": 1,
+   "print_width": "100px",
+   "width": "100px"
+  },
   {
    "fieldname": "column_break_hnxe",
    "fieldtype": "Column Break"
