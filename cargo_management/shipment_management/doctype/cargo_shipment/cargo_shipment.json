@@ -24,9 +24,9 @@
   "additional_information_section",
   "pieces",
   "section_break_mukh7",
-  "estimated_gross_weight_by_warehouse_in_pounds",
+  "estimated_gross_weight_by_warehouse_in_kg",
   "column_break_sd4xs",
-  "estimated_gross_weight_by_carriers_in_pounds"
+  "estimated_gross_weight_by_carriers_in_kg"
  ],
  "fields": [
   {
@@ -107,19 +107,19 @@
   },
   {
    "bold": 1,
-   "description": "Estimated gross weight (in pounds) of the packages provided by the warehouse (if available).",
-   "fieldname": "estimated_gross_weight_by_warehouse_in_pounds",
+   "description": "Estimated gross weight (in kg) of the packages provided by the warehouse (if available).",
+   "fieldname": "estimated_gross_weight_by_warehouse_in_kg",
    "fieldtype": "Float",
-   "label": "Estimated Gross Weight by Warehouse (in pounds)",
+   "label": "Estimated Gross Weight by Warehouse (in kg)",
    "precision": "2",
    "read_only": 1
   },
   {
    "bold": 1,
    "description": "Estimated gross weight of the packages as measured by the carriers (if available).",
-   "fieldname": "estimated_gross_weight_by_carriers_in_pounds",
+   "fieldname": "estimated_gross_weight_by_carriers_in_kg",
    "fieldtype": "Float",
-   "label": "Estimated Gross Weight by Carriers (in pounds)",
+   "label": "Estimated Gross Weight by Carriers (in kg)",
    "read_only": 1
   },
   {
@@ -194,7 +194,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Item Manager",
+   "role": "Stock Manager",
    "share": 1,
    "write": 1
   },
@@ -218,16 +218,6 @@
    "role": "Sales User",
    "share": 1,
    "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "permlevel": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Desk User",
-   "share": 1
   }
  ],
  "show_name_in_global_search": 1,
