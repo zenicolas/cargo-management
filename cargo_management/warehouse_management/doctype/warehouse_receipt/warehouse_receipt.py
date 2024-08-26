@@ -13,6 +13,7 @@ class WarehouseReceipt(Document):
 		from cargo_management.warehouse_management.doctype.warehouse_receipt_line.warehouse_receipt_line import WarehouseReceiptLine
 		from frappe.types import DF
 
+		batch_no: DF.Link | None
 		carrier_est_gross_weight: DF.Float
 		departure_date: DF.Date | None
 		status: DF.Literal["Draft", "Open", "Awaiting Departure", "In Transit", "Sorting", "Finished"]
@@ -20,6 +21,7 @@ class WarehouseReceipt(Document):
 		volumetric_weight: DF.Float
 		warehouse_est_gross_weight: DF.Float
 		warehouse_receipt_lines: DF.Table[WarehouseReceiptLine]
+		warehouse: DF.Link | None
 	# end: auto-generated types
 
 	def on_update(self):
@@ -34,13 +36,13 @@ class WarehouseReceipt(Document):
 			return
 
 		# frappe.db.sql("""
-		UPDATE tabParcel
-		SET warehouse_receipt = %(wr_name)s
-		WHERE name IN %(packages)s AND COALESCE(warehouse_receipt, '') != %(wr_name)s
-		""", {
-			'wr_name': self.name,
-			'packages': packages
-		})
+		# UPDATE tabParcel
+		# SET warehouse_receipt = %(wr_name)s
+		# WHERE name IN %(packages)s AND COALESCE(warehouse_receipt, '') != %(wr_name)s
+		# """, {
+		# 	'wr_name': self.name,
+		# 	'packages': packages
+		# })
 	# TODO: Link warehouse_receipt to the parcel doctype or parcel content
 	# TODO: Actually change the status after the package is validated and creadted. maybe at status change from draft to open?
 
