@@ -12,8 +12,6 @@
   "departure_date",
   "column_break_hnxe",
   "column_break_3",
-  "transportation_multicheck_html",
-  "transportation",
   "status",
   "sb_0",
   "warehouse_receipt_lines",
@@ -32,22 +30,6 @@
   {
    "fieldname": "column_break_3",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "transportation_multicheck_html",
-   "fieldtype": "HTML"
-  },
-  {
-   "bold": 1,
-   "fieldname": "transportation",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Transportation",
-   "options": "\nSea\nAir",
-   "reqd": 1,
-   "search_index": 1
   },
   {
    "bold": 1,
