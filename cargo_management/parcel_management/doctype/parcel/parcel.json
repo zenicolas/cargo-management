@@ -58,7 +58,7 @@
   "links_section",
   "cargo_shipment",
   "explained_status",
-  "easypost_id"
+  "post_id"
  ],
  "fields": [
   {
@@ -300,11 +300,11 @@
    "read_only": 1
   },
   {
-   "description": "Required to fetch data after an easypost tracking number is created.",
-   "fieldname": "easypost_id",
+   "description": "Required to fetch data after a tracking number is created.",
+   "fieldname": "post_id",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Easypost ID",
+   "label": "Post ID",
    "no_copy": 1,
    "print_hide": 1,
    "report_hide": 1,
