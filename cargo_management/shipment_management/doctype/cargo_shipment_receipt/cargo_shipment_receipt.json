@@ -80,10 +80,10 @@
    "reqd": 1
   },
   {
-   "description": "Billable gross weight of the cargo shipment receipt",
+   "description": "Gross weight of the cargo shipment receipt",
    "fieldname": "gross_weight",
    "fieldtype": "Float",
-   "label": "Gross Weight (in pounds)",
+   "label": "Gross Weight (in kg)",
    "read_only": 1
   },
   {
