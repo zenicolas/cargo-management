@@ -27,7 +27,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Type",
-   "options": "\nBox\nEnvelope\nPallet\nMail"
+   "options": "Bag\nBox\nPallet\nEnvelope"
   },
   {
    "fieldname": "dimmensions_section",
@@ -39,7 +39,7 @@
    "fieldname": "warehouse_est_weight",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Weight (lb)",
+   "label": "Weight (kg)",
    "non_negative": 1,
    "precision": "2"
   },
