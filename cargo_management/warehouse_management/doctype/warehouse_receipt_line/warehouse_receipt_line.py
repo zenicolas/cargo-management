@@ -10,7 +10,6 @@ class WarehouseReceiptLine(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		batch_no: DF.Link | None
 		height: DF.Float
 		length: DF.Float
 		parent: DF.Data
@@ -22,6 +21,5 @@ class WarehouseReceiptLine(Document):
 		warehouse_est_weight: DF.Float
 		width: DF.Float
 		uom: DF.Link
-		warehouse: DF.Link | None
 	# end: auto-generated types
 	pass
