@@ -17,8 +17,8 @@ class CargoShipment(Document):
         arrival_date: DF.Date | None
         cargo_shipment_lines: DF.Table[CargoShipmentLine]
         departure_date: DF.Date
-        estimated_gross_weight_by_carriers_in_pounds: DF.Float
-        estimated_gross_weight_by_warehouse_in_pounds: DF.Float
+        estimated_gross_weight_by_carriers_in_kg: DF.Float
+        estimated_gross_weight_by_warehouse_in_kg: DF.Float
         expected_arrival_date: DF.Date | None
         mute_emails: DF.Check
         pieces: DF.Int
