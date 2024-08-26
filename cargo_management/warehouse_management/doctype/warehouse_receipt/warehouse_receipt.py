@@ -33,7 +33,7 @@ class WarehouseReceipt(Document):
 		if not packages:
 			return
 
-		frappe.db.sql("""
+		# frappe.db.sql("""
 		UPDATE tabParcel
 		SET warehouse_receipt = %(wr_name)s
 		WHERE name IN %(packages)s AND COALESCE(warehouse_receipt, '') != %(wr_name)s
@@ -41,7 +41,7 @@ class WarehouseReceipt(Document):
 			'wr_name': self.name,
 			'packages': packages
 		})
-
+	# TODO: Link warehouse_receipt to the parcel doctype or parcel content
 	# TODO: Actually change the status after the package is validated and creadted. maybe at status change from draft to open?
 
 	def change_status(self, new_status):
