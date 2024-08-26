@@ -27,7 +27,8 @@ frappe.ui.form.on('Cargo Shipment', {
 		if (frm.is_new()) {
 			return;
 		}
-		frm.page.set_indicator("");
+		
+		frm.page.set_indicator.parent().append(cargo_management.transportation_indicator("");
 		frm.page.indicator.parent().append(cargo_management.transportation_indicator(frm.doc.transportation));
 
 		frm.events.build_custom_action_items(frm); // Adding Custom Action Items
