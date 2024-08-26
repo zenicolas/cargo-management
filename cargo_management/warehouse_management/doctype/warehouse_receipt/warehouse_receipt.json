@@ -92,12 +92,12 @@
   },
   {
    "bold": 1,
-   "description": "Total weight in pounds.",
+   "description": "Total weight in kg.",
    "fieldname": "warehouse_est_gross_weight",
    "fieldtype": "Float",
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Total Weight (lb)",
+   "label": "Total Weight (kg)",
    "non_negative": 1,
    "read_only": 1
   },
@@ -108,7 +108,7 @@
   {
    "allow_in_quick_entry": 1,
    "default": "0.00",
-   "description": "Weight in pounds provided by the warehouse (if available).",
+   "description": "Weight in kg provided by the warehouse (if available).",
    "fieldname": "volumetric_weight",
    "fieldtype": "Float",
    "in_preview": 1,
@@ -123,7 +123,7 @@
    "description": "Estimated gross weight of the packages as measured by the carriers (if available).",
    "fieldname": "carrier_est_gross_weight",
    "fieldtype": "Float",
-   "label": "Estimated Gross Weight by Carriers (in pounds)",
+   "label": "Estimated Gross Weight by Carriers (in kg)",
    "read_only": 1
   }
  ],
