@@ -31,8 +31,8 @@ class StatusMessage(StrEnum):
 
 	TRANSPORTATION_DELIVERED_DATE = 'The carrier indicated that it was delivered: [DATE]'
 	SIGNED_BY = 'Signed by: [SIGNER]'
-	HAS_BEEN_1_DAY = 'It's been 1 day'
-	HAS_BEEN_X_DAYS = 'It's been [DAYS] days'
+	HAS_BEEN_1_DAY = 'It has been 1 day'
+	HAS_BEEN_X_DAYS = 'It has been [DAYS] days'
 	WAIT_FOR_24_HOURS_CONFIRMATION = 'Please allow 24 business hours for the warehouse to confirm receipt.'
 	TRANSPORTER_INDICATE_ESTIMATE_DELIVERY_DATE = 'The carrier indicated an estimated delivery date: [DATE]'
 	PACKAGE_IN_EXTRAORDINARY_REVISION = 'The package is currently undergoing an extraordinary review.'
