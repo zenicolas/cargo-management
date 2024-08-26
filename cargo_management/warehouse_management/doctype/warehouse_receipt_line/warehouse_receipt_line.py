@@ -10,18 +10,18 @@ class WarehouseReceiptLine(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		batch_no: DF.Link | None
 		height: DF.Float
 		length: DF.Float
-		parcel: DF.Link
-		parcel_customer: DF.Link | None
-		parcel_customer_name: DF.ReadOnly | None
-		parcel_transportation: DF.ReadOnly | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
+		qty: DF.Float
 		type: DF.Literal["", "Box", "Envelope", "Pallet", "Mail"]
 		volumetric_weight: DF.Float
 		warehouse_est_weight: DF.Float
 		width: DF.Float
+		uom: DF.Link
+		warehouse: DF.Link | None
 	# end: auto-generated types
 	pass
