@@ -1,10 +1,8 @@
-from easypost.errors.api import ApiError as EasyPostAPIError
 
 import frappe
 from frappe import _
 from frappe.model.document import Document
 from .api.api_17track import API17Track
-from .api.easypost_api import EasyPostAPI
 from .constants import Status, StatusMessage
 from .utils import ParcelStateMachine
 
@@ -35,7 +33,7 @@ class Parcel(Document):
 		buying_price_list: DF.Link | None
 		conversion_rate: DF.Float
 		price_list_currency: DF.Link | None
-		easypost_id: DF.Data | None
+		post_id: DF.Data | None
 		est_delivery_1: DF.Date | None
 		est_delivery_2: DF.Date | None
 		explained_status: DF.Data | None
@@ -80,7 +78,7 @@ class Parcel(Document):
 			self.request_data_from_api()
 			# TODO: WORK ON THIS CHANGE!
 		elif self.has_value_changed('carrier') or self.has_value_changed('tracking_number'):  # Exists and data has changed
-			self.easypost_id = None  # Value has changed. We reset the ID. FIXME: Move this when we have new APIs.
+			self.post_id = None  # Value has changed. We reset the ID. FIXME: Move this when we have new APIs.
 			self.request_data_from_api()
 			frappe.msgprint("Carrier or Tracking Number has changed, we have requested new data.", indicator='yellow', alert=True)
 
@@ -211,8 +209,6 @@ class Parcel(Document):
 
 		print('TRY: MATCHING THE CARRIER_API')
 		match carrier_api:
-			case 'EasyPost':
-				api_data = self._request_data_from_easypost_api()
 			case '17Track':
 				api_data = self._request_data_from_17track_api()
 			case _:
@@ -231,25 +227,14 @@ class Parcel(Document):
 
 		print('OUTSIDE TRY: Saliendo del TRY')
 
-	def _request_data_from_easypost_api(self) :
-		""" Handles POST or GET to the Easypost API. Also parses the data. """
-		try:
-			if self.easypost_id:  # Parcel exists on Database. Request updates from API.
-				return EasyPostAPI(self.carrier).retrieve_package_data(self.easypost_id)
-			else:  # Parcel don't exist on System or EasyPost. We create a new one and attach it.
-				return EasyPostAPI(self.carrier).register_package(self.tracking_number)
-		except EasyPostAPIError as e:
-			print('EXCEPT: Catching inside the requestor')
-			frappe.msgprint(msg=str(e.__dict__), title='EasyPost API Error', raise_exception=False, indicator='red')
-
-	# FIXME: 6 - 10 - 81
+	
 	def _request_data_from_17track_api(self):
 		try:
-			if self.easypost_id:
+			if self.post_id:
 				return API17Track(self.carrier).retrieve_package_data(self.tracking_number)
 			else:
 				api_data = API17Track(self.carrier).register_package(self.tracking_number)
-				self.easypost_id = api_data['tag']  # api_data.get('tag', frappe.generate_hash(length=10))
+				self.post_id = api_data['tag']  # api_data.get('tag', frappe.generate_hash(length=10))
 				return api_data
 		except Exception as e:
 			frappe.msgprint(msg=str(e), title='17Track API Error', raise_exception=False, indicator='red')
