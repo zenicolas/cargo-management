@@ -1,4 +1,4 @@
-## ERPNext Cargo Management
+## ERPNext Cargo Management inspired by Agile Shift
 
 ---
 
@@ -16,19 +16,13 @@ It leverages core functionalities from ERPNext, such as Accounting, Stock, HR, A
 - **Parcel Management**: Manages the packages, integrates tracking APIs and handles notifications.
 - **Warehouse Management:** Handles the receipt of packages in warehouses.
 - **Shipment Management:** Manages shipments and receipts, also generates packing lists for each shipment.
-- **Selling Management:** Customizes ERPNext modules for invoicing packages and managing customer import orders.
 - **Support Management**: Customizes ERPNext modules for customer support related to packages and orders.
 - **Custom Views**:
     - **Workspaces, Dashboard Views, Settings**
     - **Reports**: Provides insightful reports for better decision-making and business analysis.
 - **External APIs For Tracking Packages**:
-    - [EasyPost](https://www.easypost.com/tracking-guide) ([Source Code](https://github.com/EasyPost/easypost-python))
     - [17Track](https://api.17track.net)
 
-### Extra Addons
-
-- [ERPNext Delivery Management](https://github.com/AgileShift/erpnext_delivery) - WORK on Progress
-- [Frappe Nextcloud](https://github.com/AgileShift/frappe_nextcloud) - WORK on Progress
 
 ### List of Carriers Currently Supported:
 Last checked: 22 November 2023
@@ -50,14 +44,7 @@ Last checked: 22 November 2023
 
 ---
 
-### Configuration of API Keys and Webhooks for EasyPost and 17Track
-
-#### EasyPost Configuration
-
-1. Get Your [EasyPost API Key](https://www.easypost.com/docs/api#authentication)
-2. Set the **API Key**: `$ bench set-config easypost_api_key API_KEY`
-3. Create and set your **Webhook Secret**(hmac): `$ bench set-config easypost_webhook_secret SECRET`
-4. Set up your **Webhook Secret** and the **Webhook URL** on EasyPost: `{HOST}/api/method/cargo_management.parcel_management.doctype.parcel.api.easypost_api.easypost_webhook`
+### Configuration of API Keys and Webhooks for 17Track
 
 
 #### 17Track Configuration
@@ -66,8 +53,12 @@ Last checked: 22 November 2023
 2. Set the **API Key**: `$ bench set-config 17track_api_key API_KEY`
 3. Set up the **Webhook URL** on 17Track: `{HOST}/api/method/cargo_management.parcel_management.doctype.parcel.api.17track_api.17track_webhook`
 
-
-
+## Definition
+1. **Transportation** methods are mainly Sea and Air Shipments
+2. **Parcels** are consolidated shipments that include multiple items from *Warehouse Receipt*. A Parcel is a Bill of Lading (BL) for Sea shipments and AirWayBill (AWB) for Air shipments also known as Tracking Number for the Express shipments like DHL or Fedex.
+3. **Warehouse Receipt** is an item received from the Warehouse to be shipped in one Parcel
+4. **Cargo Shipment** is the shipments of the parcels. One Parcel can have multiple *Cargo Shipment* as one BL can have multiple containers or an AWB can have multiple House WayBill or Palets
+5. **Carriers** are Transport Suppliers and Shipping companies like Maritime Shippling lines (Maersk, MSC, CMA) and Airlines (Air France, Air Mauritius, Turkish Airline, etc) offering cargo shipments and tracking services.  
 
 # TODO: WORKING
 
@@ -77,7 +68,7 @@ Last checked: 22 November 2023
    2. It can be tracked by the API or not.
 2. As the carrier updates the details the Tracking API send it via a webhook, we gather and update.
 3. When the package is marked as delivered at warehouse by the carrier we stop the Tracking API webhook updates
-4. A **Warehouse Receipt** doc its created to link the received package:
+4. A **Warehouse Receipt** doc is created to link the received package:
    1. Package related fields can be filled by the Warehouse: Content, Dimensions, Weight, Receipt Date
 5. **Cargo Shipment** is created to export Packages in bulk:
    1. Warehouse Receipts are added in them.
