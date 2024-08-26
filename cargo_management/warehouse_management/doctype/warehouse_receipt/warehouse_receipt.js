@@ -50,7 +50,7 @@ frappe.ui.form.on('Warehouse Receipt', {
 					frappe.show_alert('Paquete Pre-Alertado.');
 					frm.events.set_package(frm, r.message.coincidence);
 				} else {
-					frappe.show_alert('Paquete sin Pre-Alerta.');
+					frappe.show_alert('Package without Pre-Alert.');
 				}
 			}
 		});
@@ -94,7 +94,7 @@ frappe.ui.form.on('Warehouse Receipt', {
 			frm.doc.tracking_number = doc.name;
 			frm.doc.carrier = doc.carrier;
 
-			frm.transportation.$checkbox_area.find(`:checkbox[data-unit="${doc.transportation}"]`).trigger('click'); // This Trigger on_change
+			//frm.transportation.$checkbox_area.find(`:checkbox[data-unit="${doc.transportation}"]`).trigger('click'); // This Trigger on_change
 
 			// FIXME: Join this fields?
 			frm.doc.shipper = doc.shipper;
