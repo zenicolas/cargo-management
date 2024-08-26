@@ -46,14 +46,14 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "Box\nEnvelope\nPallet"
+   "options": "Bag\nBox\nPallet\nEnvelope"
   },
   {
    "columns": 1,
    "fieldname": "carrier",
    "fieldtype": "Select",
    "label": "Carrier",
-   "options": "Amazon\nUSPS\nUPS\nFedEx\nDHL\nLaserShip\nDrop Off\nPick Up",
+   "options": "Supplier",
    "print_hide": 1
   },
   {
@@ -129,7 +129,7 @@
    "fieldname": "warehouse_est_weight",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Warehouse estimated weight (in pounds)",
+   "label": "Warehouse estimated weight (in kg)",
    "non_negative": 1
   },
   {
@@ -188,7 +188,7 @@
    "fieldname": "carrier_est_weight",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Carrier estimated weight (in pounds)",
+   "label": "Carrier estimated weight (in kg)",
    "read_only": 1
   },
   {
@@ -210,7 +210,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Transportation",
-   "options": "Air\nSea",
+   "options": "Sea\nAir",
    "read_only": 1
   }
  ],
