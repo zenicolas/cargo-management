@@ -80,7 +80,8 @@ Last checked: 22 November 2023
    2. All **Packages** are sorted by **Customer**, and its the moment to set all related data to Create Invoices.
    3. When all the **Packages** have been processed, the **Sales Invoices** can be created.
       1. A **Sales invoice** will be created for the customer, it will contain all the related **Packages**.
-7. WORKING
+7. **Carriers** Update the carriers list to the Suppliers Doctype. Tracking website to be updated on the Supplier form. Such as Airlines and new shipping lines.
+
 
 
 
