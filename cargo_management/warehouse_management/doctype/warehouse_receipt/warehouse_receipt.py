@@ -30,10 +30,10 @@ class WarehouseReceipt(Document):
 		# TODO: Add extra fields from Warehouse Receipt -> Receipt Date & Weight
 
 		# We only change the warehouse_receipt field if it is different from current.
-		packages = get_list_from_child_table(self.warehouse_receipt_lines, 'parcel')
+		# packages = get_list_from_child_table(self.warehouse_receipt_lines, 'parcel')
 
-		if not packages:
-			return
+		# if not packages:
+		# 	return
 
 		# frappe.db.sql("""
 		# UPDATE tabParcel
