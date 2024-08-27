@@ -31,12 +31,12 @@
    "fieldname": "stock_uom",
    "fieldtype": "Link",
    "label": "Stock UOM",
-   "options": "UOM",
+   "options": "UOM"
   },
   {
    "fieldname": "qty",
    "fieldtype": "Float",
-   "label": "Quantity",
+   "label": "Quantity"
   },
   {
    "fieldname": "dimmensions_section",
