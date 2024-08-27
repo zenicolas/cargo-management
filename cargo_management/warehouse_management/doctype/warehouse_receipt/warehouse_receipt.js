@@ -1,27 +1,7 @@
 frappe.ui.form.on('Warehouse Receipt', {
 
-	transportation_multi_check: function (frm) {
-		frm.transportation = frappe.ui.form.make_control({
-			parent: frm.fields_dict.transportation_multicheck_html.$wrapper.addClass('text-center'),
-			render_input: true,
-			df: {
-				placeholder: __('Select item group'),
-				fieldname: 'transportation_options',
-				fieldtype: 'MultiCheckSingle',
-				label: __('Transportation'),
-				reqd: true, bold: true, columns: 2,
-				options: [{label: __('SEA'), value: 'Sea'}, {label: __('AIR'), value: 'Air', description: 'Air'}],
-				on_change: (selected) => frm.doc.transportation = selected
-			}
-		});
-
-	},
-
 	setup: function (frm) {
 		frm.page.sidebar.toggle(false); // Hide Sidebar
-
-		if (frm.is_new())
-			frm.events.transportation_multi_check(frm);
 	},
 
 	onload_post_render: function (frm) {},
@@ -85,26 +65,6 @@ frappe.ui.form.on('Warehouse Receipt', {
 		});
 
 		selector_dialog.show();
-	},
-
-	set_package: function (frm, coincidence) {
-		const doc_name = coincidence.name || coincidence;
-
-		frappe.db.get_doc('Package', doc_name).then(doc => {
-			frm.doc.tracking_number = doc.name;
-			frm.doc.carrier = doc.carrier;
-
-			//frm.transportation.$checkbox_area.find(`:checkbox[data-unit="${doc.transportation}"]`).trigger('click'); // This Trigger on_change
-
-			// FIXME: Join this fields?
-			frm.doc.shipper = doc.shipper;
-			frm.doc.consignee = doc.customer_name;
-
-			frm.doc.customer_description = (doc.content.length > 0) ? doc.content.map(c => 'Item: ' + c.description + '\nCantidad: ' + c.qty).join("\n\n") : null;
-
-			frm.refresh_fields();
-			frm.events.show_alerts(frm); // FIXME: Work on this
-		});
 	},
 
 	show_alerts(frm) {
