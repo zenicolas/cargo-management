@@ -37,7 +37,7 @@ def get_packages_and_wr_in_cargo_shipment(cargo_shipment: str):
  	""".format(via_sql=VIA_SQL), {
  		'cargo_shipment': cargo_shipment
  	}, as_dict=True)
-
- 	return {
- 		'packages': packages
- 	}
+	
+	return {
+		'packages': packages
+	}
