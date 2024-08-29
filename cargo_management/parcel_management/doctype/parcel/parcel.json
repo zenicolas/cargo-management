@@ -447,11 +447,6 @@
  ],
  "links": [
   {
-   "group": "Warehouse",
-   "link_doctype": "Warehouse Receipt",
-   "link_fieldname": "parcel"
-  },
-  {
    "group": "Shipment",
    "link_doctype": "Cargo Shipment",
    "link_fieldname": "package"
