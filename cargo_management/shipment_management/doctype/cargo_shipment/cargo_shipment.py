@@ -28,6 +28,7 @@ class CargoShipment(Document):
     # end: auto-generated types
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	def on_update(self):
 		""" Add Departure Date to all Warehouse Receipt Linked """
 		# TODO: What if cargo shipment is deleted?
@@ -42,6 +43,8 @@ class CargoShipment(Document):
 	        'packages': get_list_from_child_table(self.cargo_shipment_lines, 'package')
 		})
 =======
+=======
+>>>>>>> parent of b8cf7ff (Update cargo_shipment.py)
     def on_update(self):
         """ Add Departure Date to all Warehouse Receipt Linked """
         # TODO: What if cargo shipment is deleted?
@@ -55,6 +58,9 @@ class CargoShipment(Document):
             'cs_name': self.name,
             'packages': get_list_from_child_table(self.cargo_shipment_lines, 'package')
         })
+<<<<<<< HEAD
+>>>>>>> parent of b8cf7ff (Update cargo_shipment.py)
+=======
 >>>>>>> parent of b8cf7ff (Update cargo_shipment.py)
 
         wrs_in_cs = get_list_from_child_table(self.cargo_shipment_lines, 'warehouse_receipt')
