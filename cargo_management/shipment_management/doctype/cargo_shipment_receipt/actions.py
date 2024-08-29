@@ -15,7 +15,7 @@ def update_status(source_doc_name: str, new_status: str):
 	update_status_in_bulk(docs_to_update={
 		'Cargo Shipment Receipt': [doc.name],
 		'Cargo Shipment': [doc.cargo_shipment],
-		#'Warehouse Receipt': get_list_from_child_table(cargo_shipment.cargo_shipment_lines, 'warehouse_receipt'),
+		# 'Warehouse Receipt': get_list_from_child_table(cargo_shipment.cargo_shipment_lines, 'warehouse_receipt'),
 		'Parcel': get_list_from_child_table(doc.cargo_shipment_receipt_lines, 'package')
 	}, new_status=new_status, msg_title='Marked as Sorting', mute_emails=doc.mute_emails)
 
