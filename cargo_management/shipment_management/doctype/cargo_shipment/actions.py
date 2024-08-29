@@ -1,5 +1,5 @@
 import frappe
-	from cargo_management.utils import get_list_from_child_table, update_status_in_bulk
+from cargo_management.utils import get_list_from_child_table, update_status_in_bulk
 
 
  @frappe.whitelist(methods='POST')
